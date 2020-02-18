@@ -79,11 +79,18 @@ class Account(models.Model):
     username = models.CharField(max_length=20,verbose_name="用户名")
     password = models.CharField(max_length=20,verbose_name="密码")
     regist_date = models.DateField(auto_now_add=True,verbose_name="注册日期")
+    # concact = models.OneToOneField('Concact',on_delete=models.CASCADE)
 
 class Concact(models.Model):
     telephon = models.CharField(max_length=11,verbose_name="手机号")
     email = models.EmailField(default="158883967@qq.com")
     account = models.OneToOneField(Account,on_delete=models.CASCADE)
 
+class Article(models.Model):
+    title = models.CharField(max_length=20,verbose_name="标题")
+    sumary = models.TextField(verbose_name="正文")
 
+class Tag(models.Model):
+    name = models.CharField(max_length=10,verbose_name="标签名")
+    articles = models.ManyToManyField(Article)
 
