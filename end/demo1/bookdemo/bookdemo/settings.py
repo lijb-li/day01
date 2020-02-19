@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #想要使用应用中的数据类 需要注册该应用
     'booktest',
+    'polls',
 ]
 
 MIDDLEWARE = [

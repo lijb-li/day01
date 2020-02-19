@@ -10,7 +10,7 @@
         <h2>投票问题列</h2>
         <ul>
             {% for q in questions %}
-            <li><a href="{% url 'polls:detail' q.id %}"> {{forloop.counter}} .{{q.title}}</a></li>
+                <li><a href="{% url 'polls:detail' q.id %}"> {{forloop.counter}} .{{q.title}}</a></li>
             {% endfor %}
         </ul>
     </div>

@@ -36,6 +36,8 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     #使用path将booktest的路由 进行包含
+
+    path('polls/',include('polls.urls',namespace='polls')),
     path('',include('booktest.urls',namespace='booktest')),
 
 

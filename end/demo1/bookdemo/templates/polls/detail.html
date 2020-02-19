@@ -5,24 +5,25 @@
     <title>投票详情</title>
 </head>
 <body>
-
     <div >
         <h2> 投票的问题是： {{question.title}} </h2>
         <ul>
             <h3>选项有:</h3>
-            <from action="#" method="post">
+            <form action="#" method="post">
                 {% for c in question.choices.all %}
-                {% if forloop.counter == 1 %}
-                    <li><input type="radio" checked name="num" value="{{c.id}}">{{c.content}}</li>
-                {% else %}
-                     <li><input type="radio"  name="num" value="{{c.id}}">{{c.content}}</li>
-                {% endif %}
-            {% endfor %}
-            <input type="submit" value="投票">
-            </from>
-        </ul>
+                    {% if forloop.counter == 1 %}
+                        <li><input type="radio" checked name="num" value="{{c.id}}">{{c.content}}</li>
+                    {% else %}
+                        <li><input type="radio"  name="num" value="{{c.id}}">{{c.content}}</li>
+                    {% endif %}
 
+                {% endfor %}
+
+                <input type="submit" value="投票">
+            </form>
+        </ul>
         <a href="{% url 'polls:index' %}">返回</a>
     </div>
+
 </body>
 </html>
